@@ -1,6 +1,6 @@
 import java.util.*;
 
-class UnsufficientAmountException extends Exception {
+class lowExp extends Exception {
 
 }
 
@@ -35,12 +35,12 @@ class details {
             System.out.println("Enter the you need to widthdraw");
             wAmt = sc.nextInt();
             if (wAmt >= currentBalance) {
-                throw new UnsufficientAmountException();
+                throw new lowExp();
             } else {
                 currentBalance = currentBalance - wAmt;
                 getData();
             }
-        } catch (UnsufficientAmountException e) {
+        } catch (lowExp e) {
             System.out.println("current balance should be greater than or equal to widthdrawal amount");
         }
 
@@ -82,4 +82,5 @@ class BankExp
             }
         }
     }
+}
 }
